@@ -21,5 +21,9 @@ app.config(['$routeProvider',
             {
                 templateURL: 'partials/projects-index.html',
                 controller: 'ProjectIndexCtrl'
+            }).
+            otherwise(
+            {
+                redirectTo: '/projects'
             });
     }]);
