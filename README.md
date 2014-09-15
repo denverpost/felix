@@ -3,9 +3,9 @@ A mini-CMS for unique story/project presentations with strong multimedia compone
 
 # Getting Started
 ## Getting the dev webserver running
-1 Install Node and npm
-1 Run ```npm install; npm start```
-1 Vist http://localhost:8888/
+1. Install Node and npm
+1. Run ```npm install; npm start```
+1. Vist http://localhost:8888/
 
 # TODOs
 ## Photo Galleries
@@ -15,14 +15,24 @@ A mini-CMS for unique story/project presentations with strong multimedia compone
 * [ ] Replace uploaded image
 * [ ] List uploaded images
 * [ ] Assign uploaded image to photo gallery
+
 ## Layout
 * [ ] Assign media asset to a position in the article
 * [ ] Assign media column width to insert objects
+
 ## Article
 * [ ] Insert text for article
 * [ ] Update text for article
 * [ ] Create and edit article meta information
 * [ ] Create / edit title, subtitle object
+
+## Project object
+* [ ] Create / delete project
+* [ ] Save project state
+* [ ] Preview project
+* [ ] Publish / re-publish project
+* [ ] List available projects
+
 ## Other objects
 * [ ] Create freeform object
 * [ ] Create and edit modal object
@@ -31,13 +41,10 @@ A mini-CMS for unique story/project presentations with strong multimedia compone
 * [ ] Create and edit author objects
 * [ ] Create / edit scriptwell (header and footer)
 * [ ] Create / edit project-specific CSS
+
 ## Interface
 * [ ] Curly Quotes
 * [ ] Click-and-Drag Elements
-* [ ] Save project state
-* [ ] Preview project
-* [ ] Publish / re-publish project
-* [ ] List available projects
 * [ ] Multi-file upload field
 * [ ] Write front-end handlers
 * [ ] Write back-end handlers
