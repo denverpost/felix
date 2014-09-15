@@ -4,7 +4,7 @@ A mini-CMS for unique story/project presentations with strong multimedia compone
 # Getting Started
 ## Getting the dev webserver running
 1. Install Node and npm
-1. Run ```npm install; npm start```
+1. Run ```npm install; bower install; npm start```
 1. Vist http://localhost:8888/
 
 # TODOs
