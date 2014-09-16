@@ -1,13 +1,17 @@
 <form name="add" role="form">
 
+    <p>
     <label for="name">Project Name:</label>
     <input type="text" name="name" data-ng-model="name" class="" required />
+    </p>
 
+    <p>
     <label for="slug">Project Slug:</label>
     <input type="text" name="slug" data-ng-model="slug" class="" />
+    </p>
 
     <input type="text" name="object" data-ng-model="object" value="project" />
     <input type="hidden" name="action" value="add" />
     <button data-ng-disabled="progress.active()" data-ng-click="submit(add)">Submit</button>
-`
-</form>`
+
+</form>

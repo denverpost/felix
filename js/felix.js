@@ -31,7 +31,7 @@ app.config(['$routeProvider',
             }).
             when('/projects/css',
             {
-                templateUrl: 'partials/css-index.html',
+                templateUrl: 'partials/css.html',
                 controller: 'CssCtrl'
             }).
             otherwise(

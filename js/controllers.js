@@ -36,6 +36,7 @@ felixControllers.controller('ProjectAddCtrl', ['$scope', '$http',
                     console.log(data, status, headers);
                     if ( data.status == 'OK' )
                     {
+
                     }
                     else
                     {
