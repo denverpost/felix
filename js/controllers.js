@@ -51,3 +51,11 @@ felixControllers.controller('ProjectAddCtrl', ['$scope', '$http',
 
         }
     }]);
+
+
+felixControllers.controller('ProjectEditCtrl', function($scope, getData) {
+    getData.getJSON(function(results) {
+        console.log('returned something');
+        $scope.test = results;
+    })
+});
