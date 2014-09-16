@@ -21,7 +21,7 @@ app.config(['$routeProvider',
         $routeProvider.
             when('/projects',
             {
-                templateURL: 'partials/projects-index.html',
+                templateUrl: 'partials/projects-index.html',
                 controller: 'ProjectIndexCtrl'
             }).
             otherwise(
