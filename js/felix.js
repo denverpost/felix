@@ -12,25 +12,42 @@ app.config(['$routeProvider',
             when('/projects',
             {
                 templateUrl: 'partials/project-index.html',
-                controller: 'ProjectIndexCtrl'
+                controller: 'ProjectIndexCtrl',
+                title: 'Project Control'
             }).
             when('/projects/add',
             {
                 templateUrl: 'partials/project-add.html',
-                controller: 'ProjectAddCtrl'
+                controller: 'ProjectAddCtrl',
+                title: 'Add a new project'
             }).
             when('/projects/edit',
             {
                 templateUrl: 'partials/project-edit.html',
-                controller: 'ProjectEditCtrl'
+                controller: 'ProjectEditCtrl',
+                title: 'Edit project'
             }).
             when('/projects/css',
             {
                 templateUrl: 'partials/css.html',
-                controller: 'CssCtrl'
+                controller: 'CssCtrl',
+                title: 'Edit CSS'
             }).
             otherwise(
             {
                 redirectTo: '/projects'
+            });
+    }]);
+
+app.run(['$location', '$rootScope',
+    function($location, $rootScope)
+    {
+        $rootScope.$on('$routeChangeSuccess', 
+            function (event, current, previous)
+            {
+                if (current.hasOwnProperty('$$route'))
+                {
+                    $rootScope.title = current.$$route.title;
+                }
             });
     }]);

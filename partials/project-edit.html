@@ -1,10 +1,10 @@
 <div class="row">
         <div class="large-6 columns">
             <div class="row">
-                <form name="metaForm" novalidate class="simple-form" ng-repeat="meta in test.meta">
+                <form name="metaForm" novalidate class="simple-form" ng-repeat="meta in edit_meta.meta">
                     <div class="large-12 columns">
                         <label>{{meta.name}}
-                            <input type="text" value="{{meta.data}}" />
+                            <input type="text" name="{{meta.name}}" value="{{meta.data}}" />
                         </label>
                     </div>
                 </form>
@@ -12,7 +12,7 @@
         </div> 
         <div class="large-6 columns">
             <code>
-                <p ng-repeat="meta in test.meta">
+                <p ng-repeat="meta in edit_meta.meta">
                     &lt;meta name="{{meta.name}}" value="{{meta.data}}" /&gt;
                 </p>
             </code>

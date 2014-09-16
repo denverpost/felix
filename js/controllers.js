@@ -56,6 +56,5 @@ felixControllers.controller('ProjectAddCtrl', ['$scope', '$http',
 felixControllers.controller('ProjectEditCtrl', ['$scope', 'dataFactory',
     function($scope, dataFactory)
     {
-        $scope.test = dataFactory.query();
-        console.log($scope.test);
+        $scope.edit_meta = angular.fromJson(dataFactory.query());
 }]);
