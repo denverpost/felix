@@ -1,7 +1,8 @@
 //'use strict';
 var app = angular.module("felix", [
     'ngRoute',
-    'felixControllers']);
+    'felixControllers',
+    'felixServices']);
 
 // URL routing
 app.config(['$routeProvider',

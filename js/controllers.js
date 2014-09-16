@@ -1,4 +1,4 @@
-var felixControllers = angular.module('felixControllers', []);
+var felixControllers = angular.module('felixControllers', ['felixServices']);
 
 
 felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
@@ -53,9 +53,9 @@ felixControllers.controller('ProjectAddCtrl', ['$scope', '$http',
     }]);
 
 
-felixControllers.controller('ProjectEditCtrl', function($scope, getData) {
-    getData.getJSON(function(results) {
-        console.log('returned something');
-        $scope.test = results;
-    })
-});
+felixControllers.controller('ProjectEditCtrl', ['$scope', 'dataFactory',
+    function($scope, dataFactory)
+    {
+        $scope.test = dataFactory.query();
+        console.log($scope.test);
+}]);
