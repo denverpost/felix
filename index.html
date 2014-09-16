@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html ng-app="felix">
+<html lang="en" ng-app="felix">
 <head>
     <meta charset="UTF-8" />
     <title></title>
@@ -7,24 +7,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link href="css/foundation.min.css" rel="stylesheet"/>
     <link href="css/felix.css" rel="stylesheet"/>
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    
+    <!--
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="js/services.js"></script>
+    -->
     <script src="js/mm-foundation-tpls-0.3.0.min.js"></script>
     <script src="js/felix.js"></script>
+<script src="js/controllers.js"></script>
 <style type="text/css" media="screen">
 </style>
 </head>
 <body>
     <header>
-        <h1>Test</h1>
+        <h1>Felix</h1>
     </header>
-    <section ng-view>
-    
+    <section ng-view></section>
+    <section>
+    <div ng-controller="getData">
+        <ul ng-repeat="id in test">
+        <li>{{id}}</li>
+        </ul>
+    </div>
     </section>
     <footer>
     </footer>

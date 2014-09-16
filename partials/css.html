@@ -1,0 +1,13 @@
+<form name="edit" role="form">
+
+    <p>
+    <label for="name">CSS:</label>
+    <textarea name="name" data-ng-model="name" class="" required></textarea>
+    </p>
+
+    <input type="text" name="project" data-ng-model="project" value="" />
+    <input type="text" name="object" data-ng-model="object" value="css" />
+    <input type="hidden" name="action" value="edit" />
+    <button data-ng-click="submit(edit)">Submit</button>
+
+</form>
