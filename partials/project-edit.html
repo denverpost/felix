@@ -1,0 +1,20 @@
+<div class="row" ng-controller="metaData">
+        <div class="large-6 columns">
+            <div class="row">
+                <form name="metaForm" novalidate class="simple-form" ng-repeat="meta in test.meta">
+                    <div class="large-12 columns">
+                        <label>{{meta.name}}
+                            <input type="text" value="{{meta.data}}" />
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div> 
+        <div class="large-6 columns">
+            <code>
+                <p ng-repeat="meta in test.meta">
+                    &lt;meta name="{{meta.name}}" value="{{meta.data}}" /&gt;
+                </p>
+            </code>
+        </div>
+    </div>

@@ -9,8 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="css/foundation.min.css" rel="stylesheet"/>
+    <link href="css/felix.css" rel="stylesheet"/>
 
-    <script src="js/angular.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    
     <script src="js/mm-foundation-tpls-0.3.0.min.js"></script>
     <script src="js/felix.js"></script>
 <style type="text/css" media="screen">
@@ -20,12 +23,8 @@
     <header>
         <h1>Test</h1>
     </header>
-    <section>
-    <div ng-controller="getData">
-        <ul ng-repeat="id in test">
-        <li>{{id}}</li>
-        </ul>
-    </div>
+    <section ng-view>
+    
     </section>
     <footer>
     </footer>

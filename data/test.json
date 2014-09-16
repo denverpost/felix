@@ -1,72 +1,73 @@
 {
-	"meta": [
-		{
-		"id": "1",
-		"site_title": "Trying to Live, Trying to Learn: Homelessness on the rise in Colorado schools &mdash; The Denver Post"
-		},
-		{
-		"id": "2",
-		"meta_title": "Trying to Live, Trying to Learn: Homelessness on the rise in Colorado schools"
-		},
-		{
-		"id": "3",
-		"description": "Homeless students struggle with high drop-out rates, disabilities and behavioral problems in schools across Colorado. Their numbers have tripled in a decade."
-		},
-		{
-		"id": "4",
-		"news_keywords": "Homelessness, Education, Homeless Students, Colorado, Denver, Aurora, Family, Low Income, Schools"
-		},
-		{
-		"id": "5",
-		"twitter_url": "http://www.denverpost.com/homelessstudents/index.html"
-		},
-		{
-		"id": "6",
-		"twitter_title": "Trying to Live, Trying to Learn: Homelessness on the rise in Colorado schools — The Denver Post"
-		},
-		{
-		"id": "7",
-		"twitter_description": "Homeless students struggle with high drop-out rates, disabilities and behavioral problems in schools across Colorado. Their numbers have tripled in a decade."
-		},
-		{
-		"id": "8",
-		"twitter_image": "http://extras.denverpost.com/homelessstudents/img/homeless-school-child-promo.png"
-		},
-		{
-		"id": "9",
-		"twitter_site": "@denverpost"
-		},
-		{
-		"id": "10",
-		"twitter_domain": "denverpost.com"
-		},
-		{
-		"id": "11",
-		"twitter_creator": "@JBrownDPost"
-		},
-		{
-		"id": "12",
-		"og_title": "Trying to Live, Trying to Learn: Homelessness on the rise in Colorado schools — The Denver Post"
-		},
-		{
-		"id": "13",
-		"og_url": "http://extras.denverpost.com/homelessstudents/index.html"
-		},
-		{
-		"id": "14",
-		"og_image": "http://extras.denverpost.com/homelessstudents/img/homeless-school-child-promo.png"
-		},
-		{
-		"id": "15",
-		"og_site_name": "The Denver Post"
-		},
-		{
-		"id": "16",
-		"og_description": "Homeless students struggle with high drop-out rates, disabilities and behavioral problems in schools across Colorado. Their numbers have tripled in a decade."
-		},
-		{
-		"id": "17",
-		"article_publisher": "https://www.facebook.com/denverpost"
-		}
-	]
+	"meta":
+		[
+			{
+				"name": "site_title",
+				"data": "Trying to Live, Trying to Learn: Homelessness on the rise in Colorado schools &mdash; The Denver Post"
+			},
+			{
+				"name": "meta_title",
+				"data": "Trying to Live, Trying to Learn: Homelessness on the rise in Colorado schools"
+			},
+			{
+				"name": "description",
+				"data": "Homeless students struggle with high drop-out rates, disabilities and behavioral problems in schools across Colorado. Their numbers have tripled in a decade."
+			},
+			{
+				"name": "news_keywords",
+				"data": "Homelessness, Education, Homeless Students, Colorado, Denver, Aurora, Family, Low Income, Schools"
+			},
+			{
+				"name": "twitter_url",
+				"data": "http://www.denverpost.com/homelessstudents/index.html"
+			},
+			{
+				"name": "twitter_title",
+				"data": "Trying to Live, Trying to Learn: Homelessness on the rise in Colorado schools — The Denver Post"
+			},
+			{
+				"name": "twitter_description",
+				"data": "Homeless students struggle with high drop-out rates, disabilities and behavioral problems in schools across Colorado. Their numbers have tripled in a decade."
+			},
+			{
+				"name": "twitter_image",
+				"data": "http://extras.denverpost.com/homelessstudents/img/homeless-school-child-promo.png"		
+			},
+			{
+				"name": "twitter_site",
+				"data": "@denverpost"
+			},
+			{
+				"name": "twitter_domain",
+				"data": "denverpost.com"
+			},
+			{
+				"name": "twitter_creator",
+				"data": "@JBrownDPost"
+			},
+			{
+				"name": "og_title",
+				"data": "Trying to Live, Trying to Learn: Homelessness on the rise in Colorado schools — The Denver Post"
+			},
+			{
+				"name": "og_url",
+				"data": "http://extras.denverpost.com/homelessstudents/index.html"
+			},
+			{
+				"name": "og_image",
+				"data": "http://extras.denverpost.com/homelessstudents/img/homeless-school-child-promo.png"
+			},
+			{
+				"name": "og_site_name",
+				"data": "The Denver Post"
+			},
+			{
+				"name": "og_description",
+				"data": "Homeless students struggle with high drop-out rates, disabilities and behavioral problems in schools across Colorado. Their numbers have tripled in a decade."		
+			},
+			{
+				"name": "article_publisher",
+				"data": "https://www.facebook.com/denverpost"
+			}
+		]
 }
