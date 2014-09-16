@@ -1,0 +1,14 @@
+<form name="edit" role="form">
+
+    <label for="name">Project Name:</label>
+    <input type="text" name="name" data-ng-model="name" class="" required />
+
+    <label for="slug">Project Slug:</label>
+    <input type="text" name="slug" data-ng-model="slug" class="" />
+
+    <input type="text" name="project" data-ng-model="project" value="" />
+    <input type="text" name="object" data-ng-model="object" value="css" />
+    <input type="hidden" name="action" value="edit" />
+    <button data-ng-disabled="progress.active()" data-ng-click="submit(add)">Submit</button>
+`
+</form>`

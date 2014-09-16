@@ -29,6 +29,11 @@ app.config(['$routeProvider',
                 templateUrl: 'partials/project-add.html',
                 controller: 'ProjectAddCtrl'
             }).
+            when('/projects/css',
+            {
+                templateUrl: 'partials/css-index.html',
+                controller: 'CssCtrl'
+            }).
             otherwise(
             {
                 redirectTo: '/projects'
