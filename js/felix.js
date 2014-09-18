@@ -15,11 +15,11 @@ app.config(['$routeProvider',
                 controller: 'ProjectIndexCtrl',
                 title: 'Project Control'
             }).
-            when('/projects/add',
+            when('/projects/create',
             {
-                templateUrl: 'partials/project-add.html',
-                controller: 'ProjectAddCtrl',
-                title: 'Add a new project'
+                templateUrl: 'partials/project-create.html',
+                controller: 'ProjectCreateCtrl',
+                title: 'Create a project'
             }).
             when('/projects/edit',
             {

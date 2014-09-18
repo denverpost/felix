@@ -7,7 +7,7 @@ felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
 
     }]);
 
-felixControllers.controller('ProjectAddCtrl', ['$scope', '$http',
+felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http',
     function($scope, $http)
     {
         $scope.submit = function(form)
