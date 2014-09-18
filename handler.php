@@ -36,11 +36,18 @@ function create_object($object, $params)
     switch ( $object ):
         case 'project':
             // Update the project list.
-            file_get_contents('data/project-list.json');
-            
+            $filename = 'project-list';
+            $data = json_decode(file_get_contents('data/' . $filename . '.json'));
+            if ( $data === FALSE ) die("JSON from $filename could not be decoded");
+            $data->$params['slug'] = $params['name'];
+            file_put_contents('data/' . $filename . '.json', json_encode($data));
+
             // Create the project detail file.
+            mkdir('data/projects/' . $params['slug'], 0777);
+            file_put_contents('data/projects/' . $params['slug'] . '/project.json', json_encode($params));
+            break;
         default:
-            die("Invalid object.");
+            die("Invalid object $object");
     endswitch;
 
 }
