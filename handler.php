@@ -46,9 +46,10 @@ function delete_object($object, $params)
             unset($data->$params['slug']);
             file_put_contents($file['path'], json_encode($data));
 
-            // Remove the project dir and its innards *** TODO
-            // * Get a list of the files in that dir, iterate through, deleting.
-            rmdir('data/projects/' . $params['slug'], 0777);
+            // Remove the project dir and its innards
+            // Deletes all top-level project json files. Will eventually need to do the same for project subdirs.
+            array_map('unlink', glob('data/projects/' . $params['slug'] . '/*.json'));
+            rmdir('data/projects/' . $params['slug']);
             break;
         default:
             break;
