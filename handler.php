@@ -31,6 +31,11 @@ switch ( $action ):
         die("Invalid action.");
 endswitch;
 
+function delete_object($object, $params)
+{}
+function edit_object($object, $params)
+{}
+
 function create_object($object, $params)
 {
     switch ( $object ):
