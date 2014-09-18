@@ -1,0 +1,14 @@
+<h1>ARE YOU SURE YOU WANT TO DELETE THIS PROJECT???</h1>
+<form name="form" role="form">
+    <p>
+    <label for="slug">Project Slug:</label>
+    <input type="text" name="slug" ng-model="slug" class="" />
+    </p>
+
+    <div class="hidden">
+    <input type="text" name="object" ng-model="object" ng-init="object='project'" />
+    <input type="text" name="action" ng-model="action" ng-init="action='delete'" />
+    </div>
+    <button ng-click="submit(form)">YES</button>
+
+</form>

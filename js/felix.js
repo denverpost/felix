@@ -21,7 +21,7 @@ app.config(['$routeProvider',
                 controller: 'ProjectCreateCtrl',
                 title: 'Create a project'
             }).
-            when('/projects/edit',
+            when('/projects/edit/:projectSlug',
             {
                 templateUrl: 'partials/project-edit.html',
                 controller: 'ProjectEditCtrl',
