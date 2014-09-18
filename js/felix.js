@@ -27,6 +27,12 @@ app.config(['$routeProvider',
                 controller: 'ProjectEditCtrl',
                 title: 'Edit project'
             }).
+            when('/projects/delete/:projectSlug',
+            {
+                templateUrl: 'partials/project-delete.html',
+                controller: 'ProjectDeleteCtrl',
+                title: 'Delete project'
+            }).
             when('/projects/css',
             {
                 templateUrl: 'partials/css.html',
