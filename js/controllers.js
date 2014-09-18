@@ -4,7 +4,10 @@ var felixControllers = angular.module('felixControllers', ['felixServices']);
 felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
     function($scope, $http)
     {
-
+        $http.get('data/project-list.json').success(function(data)
+        {
+            $scope.projects = data;
+        });
     }]);
 
 felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http',
@@ -36,7 +39,7 @@ felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http',
                     console.log(data, status, headers);
                     if ( data.status == 'OK' )
                     {
-
+                        
                     }
                     else
                     {

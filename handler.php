@@ -1,6 +1,6 @@
 <?PHP
 // Read and write operations on data
-// Two parameters are required: action and object.
+// Two GET parameters are required: action and object.
 // We don't do as much sanitation on this data because it's running on an internal server.
 
 // Accepted action values:

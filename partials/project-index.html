@@ -5,6 +5,10 @@
 </ul>
 <h3>Edit a project</h3>
 <ul>
-    <li ng-repeat="project in projects"></li>
+    <li ng-repeat="(slug, name) in projects"><a href="#/projects/edit/{{slug}}">{{name}}</a></li>
+</ul>
+<h3>Delete a project</h3>
+<ul>
+    <li ng-repeat="(slug, name) in projects"><a href="#/projects/delete/{{slug}}">{{name}}</a></li>
 </ul>
 </div>
