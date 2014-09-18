@@ -1,10 +1,10 @@
 //'use strict';
+
 var app = angular.module("felix", [
     'ngRoute',
     'felixControllers',
     'felixServices']);
 
-// URL routing
 app.config(['$routeProvider',
     function ($routeProvider)
     {
@@ -32,11 +32,7 @@ app.config(['$routeProvider',
                 templateUrl: 'partials/css.html',
                 controller: 'CssCtrl',
                 title: 'Edit CSS'
-            }).
-            otherwise(
-            {
-                redirectTo: '/projects'
-            });
+            })
     }]);
 
 app.run(['$location', '$rootScope',

@@ -2,16 +2,18 @@
 
     <p>
     <label for="name">Project Name:</label>
-    <input type="text" name="name" data-ng-model="name" class="" required />
+    <input type="text" name="name" ng-model="name" class="" required />
     </p>
 
     <p>
     <label for="slug">Project Slug:</label>
-    <input type="text" name="slug" data-ng-model="slug" class="" />
+    <input type="text" name="slug" ng-model="slug" class="" />
     </p>
 
-    <input type="hidden" name="object" data-ng-model="object" value="project" />
-    <input type="hidden" name="action" value="add" />
-    <button data-ng-disabled="progress.active()" data-ng-click="submit(add)">Submit</button>
+    <div class="hidden">
+    <input type="text" name="object" ng-model="object" ng-init="object='project'" />
+    <input type="text" name="action" ng-model="action" ng-init="action='add'" />
+    </div>
+    <button ng-disabled="progress.active()" ng-click="submit(add)">Submit</button>
 
 </form>

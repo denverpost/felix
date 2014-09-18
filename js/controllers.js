@@ -15,7 +15,7 @@ felixControllers.controller('ProjectAddCtrl', ['$scope', '$http',
             $scope.submitted = true;
 
             if ( form.$invalid ) return;
-            console.log(form, $scope);
+            console.log($scope);
 
             var submission = {
                 params: {
