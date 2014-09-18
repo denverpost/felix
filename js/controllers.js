@@ -51,10 +51,7 @@ felixControllers.controller('ProjectDeleteCtrl', ['$scope', '$routeParams', '$ht
                     console.log(data, status, headers);
 
                 });
-
         }
-
-        
     }]);
 
 felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http',
@@ -98,7 +95,6 @@ felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http',
                     console.log(data, status, headers);
 
                 });
-
         }
     }]);
 
