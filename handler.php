@@ -32,7 +32,28 @@ switch ( $action ):
 endswitch;
 
 function delete_object($object, $params)
-{}
+{
+    switch ( $object ):
+        case 'project':
+            // Update the project list.
+            $file = array(
+                'name' => 'project-list',
+                'dir' => 'data/',
+                'ext' => '.json');
+            $file['path'] = $file['dir'] . $file['name'] . $file['ext'];
+            $data = json_decode(file_get_contents($file['path']));
+            if ( $data === FALSE ) die("JSON from " . $file['name'] . " could not be decoded");
+            unset($data->$params['slug']);
+            file_put_contents($file['path'], json_encode($data));
+
+            // Remove the project dir and its innards *** TODO
+            // * Get a list of the files in that dir, iterate through, deleting.
+            rmdir('data/projects/' . $params['slug'], 0777);
+            break;
+        default:
+            break;
+    endswitch;
+}
 function edit_object($object, $params)
 {}
 
