@@ -10,8 +10,8 @@ felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
         });
     }]);
 
-felixControllers.controller('ProjectDeleteCtrl', ['$scope', '$routeParams', '$http',
-    function($scope, $routeParams, $http)
+felixControllers.controller('ProjectDeleteCtrl', ['$scope', '$routeParams', '$http', '$window',
+    function($scope, $routeParams, $http, $window)
     {
         $scope.slug = $routeParams.slug;
         $scope.submit = function(form)
@@ -49,13 +49,13 @@ felixControllers.controller('ProjectDeleteCtrl', ['$scope', '$routeParams', '$ht
                 .error(function(data, status, headers, submission)
                 {
                     console.log(data, status, headers);
-
+                    $window.location.href = '/';
                 });
         }
     }]);
 
-felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http',
-    function($scope, $http)
+felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http', '$window',
+    function($scope, $http, $window)
     {
         $scope.submit = function(form)
         {
@@ -80,10 +80,8 @@ felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http',
             $http.jsonp('http://localhost/felix/handler.php', submission)
                 .success(function(data, status, headers, submission)
                 {
-                    console.log(data, status, headers);
                     if ( data.status == 'OK' )
                     {
-                        
                     }
                     else
                     {
@@ -92,6 +90,7 @@ felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http',
                 })
                 .error(function(data, status, headers, submission)
                 {
+                    $window.location.href = '/';
                     console.log(data, status, headers);
 
                 });

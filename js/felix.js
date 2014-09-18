@@ -38,7 +38,10 @@ app.config(['$routeProvider',
                 templateUrl: 'partials/css.html',
                 controller: 'CssCtrl',
                 title: 'Edit CSS'
-            })
+            }).
+            otherwise({
+                redirectTo: '/projects'
+            });
     }]);
 
 app.run(['$location', '$rootScope',
