@@ -49,7 +49,7 @@ felixControllers.controller('ProjectDeleteCtrl', ['$scope', '$routeParams', '$ht
                 .error(function(data, status, headers, submission)
                 {
                     console.log(data, status, headers);
-                    $window.location.href = '/';
+                    $window.location.href = '#/';
                 });
         }
     }]);
@@ -90,7 +90,7 @@ felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http', '$window',
                 })
                 .error(function(data, status, headers, submission)
                 {
-                    $window.location.href = '/';
+                    $window.location.href = '#/';
                     console.log(data, status, headers);
 
                 });
