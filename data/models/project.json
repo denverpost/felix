@@ -1,0 +1,73 @@
+{
+	"meta":
+		[
+			{
+				"name": "site_title",
+				"data": ""
+			},
+			{
+				"name": "meta_title",
+				"data": ""
+			},
+			{
+				"name": "description",
+				"data": ""
+			},
+			{
+				"name": "news_keywords",
+				"data": ""
+			},
+			{
+				"name": "twitter_url",
+				"data": ""
+			},
+			{
+				"name": "twitter_title",
+				"data": ""
+			},
+			{
+				"name": "twitter_description",
+				"data": ""
+			},
+			{
+				"name": "twitter_image",
+				"data": ""		
+			},
+			{
+				"name": "twitter_site",
+				"data": ""
+			},
+			{
+				"name": "twitter_domain",
+				"data": ""
+			},
+			{
+				"name": "twitter_creator",
+				"data": ""
+			},
+			{
+				"name": "og_title",
+				"data": ""
+			},
+			{
+				"name": "og_url",
+				"data": ""
+			},
+			{
+				"name": "og_image",
+				"data": ""
+			},
+			{
+				"name": "og_site_name",
+				"data": ""
+			},
+			{
+				"name": "og_description",
+				"data": ""		
+			},
+			{
+				"name": "article_publisher",
+				"data": ""
+			}
+		]
+}

@@ -104,11 +104,11 @@ function create_object($object, $params)
             // Create empty fields for the other attributes we'll need.
             $attrs = file('data/project.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             foreach ( $attrs as $attr ):
-                $data->params->$attr = '';
+                $data->params->meta->$attr = '';
             endforeach;
 
             // Create the project detail file.
-            mkdir('data/projects/' . $params['slug'], 0777);
+            mkdir('data/projects/' . $slug, 0777);
             file_put_contents('data/projects/' . $slug . '/project.json', json_encode($data->params));
             break;
 

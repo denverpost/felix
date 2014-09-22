@@ -27,11 +27,11 @@ A mini-CMS for unique story/project presentations with strong multimedia compone
 * [ ] Create / edit title, subtitle object
 
 ## Project object
-* [ ] Create / delete project
+* [X] Create / delete project
 * [ ] Save project state
 * [ ] Preview project
 * [ ] Publish / re-publish project
-* [ ] List available projects
+* [X] List available projects
 
 ## Other objects
 * [ ] Create freeform object
