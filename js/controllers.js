@@ -1,5 +1,9 @@
 var felixControllers = angular.module('felixControllers', ['felixServices']);
 
+felixControllers.controller('formCtrl', ['$scope', '$filter',
+    function($scope, $filter)
+    {
+    }]);
 
 felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
     function($scope, $http)
@@ -68,8 +72,7 @@ felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http', '$window',
                 params: {
                     'object': $scope.object,
                     'action': $scope.action,
-                    'name': $scope.name,
-                    'slug': $scope.slug
+                    'name': $scope.name
                 }
             }
 

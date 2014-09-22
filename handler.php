@@ -31,6 +31,31 @@ switch ( $action ):
         die("Invalid action.");
 endswitch;
 
+function slugify($text)
+{ 
+  // replace non letter or digits by -
+  $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
+
+  // trim
+  $text = trim($text, '-');
+
+  // transliterate
+  $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+  // lowercase
+  $text = strtolower($text);
+
+  // remove unwanted characters
+  $text = preg_replace('~[^-\w]+~', '', $text);
+
+  if (empty($text))
+  {
+    return 'n-a';
+  }
+
+  return $text;
+}
+
 function delete_object($object, $params)
 {
     switch ( $object ):
@@ -70,7 +95,14 @@ function create_object($object, $params)
             $file['path'] = $file['dir'] . $file['name'] . $file['ext'];
             $data = json_decode(file_get_contents($file['path']));
             if ( $data === FALSE ) die("JSON from " . $file['name'] . " could not be decoded");
-            $data->$params['slug'] = $params['name'];
+            $data->$params['slug'] = slugify($params['name']);
+
+            // Create empty fields for the other attributes we'll need.
+            $attrs = file('data/project.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+            foreach ( $attrs as $attr ):
+                $data->$params[$attr] = '';
+            endforeach;
+
             file_put_contents($file['path'], json_encode($data));
 
             // Create the project detail file.

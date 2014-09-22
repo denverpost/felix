@@ -3,7 +3,8 @@
 var app = angular.module("felix", [
     'ngRoute',
     'felixControllers',
-    'felixServices']);
+    'felixServices'
+    ]);
 
 app.config(['$routeProvider',
     function ($routeProvider)
