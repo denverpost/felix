@@ -14,30 +14,35 @@ app.config(['$routeProvider',
             {
                 templateUrl: 'partials/project-index.html',
                 controller: 'ProjectIndexCtrl',
+                object: 'project',
                 title: 'Project Control'
             }).
             when('/projects/create',
             {
                 templateUrl: 'partials/project-create.html',
                 controller: 'ProjectCreateCtrl',
+                object: 'project',
                 title: 'Create a project'
             }).
             when('/projects/:slug/edit',
             {
                 templateUrl: 'partials/project-edit.html',
                 controller: 'ProjectEditCtrl',
+                object: 'project',
                 title: 'Edit project'
             }).
             when('/projects/:slug/delete',
             {
                 templateUrl: 'partials/project-delete.html',
                 controller: 'ProjectDeleteCtrl',
+                object: 'project',
                 title: 'Delete project'
             }).
-            when('/projects/css',
+            when('/projects/:slug/css',
             {
                 templateUrl: 'partials/css.html',
                 controller: 'CssCtrl',
+                object: 'project',
                 title: 'Edit CSS'
             }).
             otherwise({
@@ -54,6 +59,7 @@ app.run(['$location', '$rootScope',
                 if (current.hasOwnProperty('$$route'))
                 {
                     $rootScope.title = current.$$route.title;
+                    $rootScope.object = current.$$route.object;
                 }
             });
     }]);

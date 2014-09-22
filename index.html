@@ -30,7 +30,7 @@
     <header>
         <h1><a href="#/">Felix</a></h1>
     </header>
-    <section ng-nav></section>
+    <section ng-class="project-nav" ng-include src="'partials/' + object + '-nav.html'"></section>
     <section ng-view></section>
     <section>
     </section>
