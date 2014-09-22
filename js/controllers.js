@@ -1,4 +1,4 @@
-var felixControllers = angular.module('felixControllers', ['felixServices']);
+var felixControllers = angular.module('felixControllers', ['felixServices', 'ngRoute']);
 
 felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
     function($scope, $http)
@@ -96,8 +96,9 @@ felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http', '$window',
     }]);
 
 
-felixControllers.controller('ProjectEditCtrl', ['$scope', 'dataFactory',
-    function($scope, dataFactory)
+felixControllers.controller('ProjectEditCtrl', ['$scope', '$routeParams', 'dataFactory',
+    function($scope, $routeParams, dataFactory)
     {
-        $scope.edit_meta = angular.fromJson(dataFactory.query());
+        //var project = dataFactory.get({slug:$routeParams.slug});
+        $scope.edit_meta = angular.fromJson(dataFactory.query({slug: $routeParams.slug}));
 }]);
