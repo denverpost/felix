@@ -1,6 +1,6 @@
 var felixServices = angular.module('felixServices', ['ngResource']);
 
-felixServices.factory('dataFactory', ['$resource',
+felixServices.factory('projectFactory', ['$resource',
 	function($resource){
 		return $resource('data/project/:slug/project.json', {}, {
 			query: {method:'GET', params:{slug:'@slug'}, isArray:false}

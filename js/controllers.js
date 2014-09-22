@@ -9,6 +9,12 @@ felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
         });
     }]);
 
+felixControllers.controller('ProjectEditCtrl', ['$scope', '$routeParams', 'projectFactory',
+    function($scope, $routeParams, projectFactory)
+    {
+        $scope.edit_meta = angular.fromJson(projectFactory.query({slug: $routeParams.slug}));
+}]);
+
 felixControllers.controller('ProjectDeleteCtrl', ['$scope', '$routeParams', '$http', '$window',
     function($scope, $routeParams, $http, $window)
     {
@@ -95,10 +101,3 @@ felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http', '$window',
         }
     }]);
 
-
-felixControllers.controller('ProjectEditCtrl', ['$scope', '$routeParams', 'dataFactory',
-    function($scope, $routeParams, dataFactory)
-    {
-        //var project = dataFactory.get({slug:$routeParams.slug});
-        $scope.edit_meta = angular.fromJson(dataFactory.query({slug: $routeParams.slug}));
-}]);
