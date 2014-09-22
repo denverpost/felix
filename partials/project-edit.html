@@ -1,3 +1,5 @@
+<div name="edit" role="form">
+<!-- Changing the above element to a form hides all the edit fields -->
 <div class="row">
         <div class="large-6 columns">
             <div class="row">
@@ -18,3 +20,9 @@
             </code>
         </div>
     </div>
+    <div class="hidden">
+    <input type="text" name="object" ng-model="object" ng-init="object='project'" />
+    <input type="text" name="action" ng-model="action" ng-init="action='edit'" />
+    </div>
+    <button ng-disabled="progress.active()" ng-click="submit(edit)">Submit</button>
+</form>
