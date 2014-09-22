@@ -3,7 +3,7 @@ var felixControllers = angular.module('felixControllers', ['felixServices']);
 felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
     function($scope, $http)
     {
-        $http.get('data/project-list.json').success(function(data)
+        $http.get('data/project/list.json').success(function(data)
         {
             $scope.projects = data;
         });

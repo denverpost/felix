@@ -62,8 +62,8 @@ function delete_object($object, $params)
         case 'project':
             // Update the project list.
             $file = array(
-                'name' => 'project-list',
-                'dir' => 'data/',
+                'name' => 'list',
+                'dir' => 'data/' . $object . '/',
                 'ext' => '.json');
             $file['path'] = $file['dir'] . $file['name'] . $file['ext'];
             $data = json_decode(file_get_contents($file['path']));
@@ -73,8 +73,8 @@ function delete_object($object, $params)
 
             // Remove the project dir and its innards
             // Deletes all top-level project json files. Will eventually need to do the same for project subdirs.
-            array_map('unlink', glob('data/projects/' . $params['slug'] . '/*.json'));
-            rmdir('data/projects/' . $params['slug']);
+            array_map('unlink', glob('data/project/' . $params['slug'] . '/*.json'));
+            rmdir('data/project/' . $params['slug']);
             break;
         default:
             break;
@@ -90,8 +90,8 @@ function create_object($object, $params)
             // UPDATE: project list
             // Update the project list.
             $file = array(
-                'name' => 'project-list',
-                'dir' => 'data/',
+                'name' => 'list',
+                'dir' => 'data/' . $object . '/',
                 'ext' => '.json');
             $file['path'] = $file['dir'] . $file['name'] . $file['ext'];
             $data = json_decode(file_get_contents($file['path']));
@@ -106,8 +106,8 @@ function create_object($object, $params)
             $data->params = $model;
 
             // Create the project detail file.
-            mkdir('data/projects/' . $slug, 0777);
-            file_put_contents('data/projects/' . $slug . '/project.json', json_encode($data->params));
+            mkdir('data/project/' . $slug, 0777);
+            file_put_contents('data/project/' . $slug . '/project.json', json_encode($data->params));
             break;
 
         default:
