@@ -87,6 +87,7 @@ function create_object($object, $params)
 {
     switch ( $object ):
         case 'project':
+            // UPDATE: project list
             // Update the project list.
             $file = array(
                 'name' => 'project-list',
@@ -95,19 +96,20 @@ function create_object($object, $params)
             $file['path'] = $file['dir'] . $file['name'] . $file['ext'];
             $data = json_decode(file_get_contents($file['path']));
             if ( $data === FALSE ) die("JSON from " . $file['name'] . " could not be decoded");
-            $data->$params['slug'] = slugify($params['name']);
+            $slug = slugify($params['name']);
+            $data->$slug = $params['name'];
+            file_put_contents($file['path'], json_encode($data));
 
+            // CREATE: project
             // Create empty fields for the other attributes we'll need.
             $attrs = file('data/project.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             foreach ( $attrs as $attr ):
-                $data->$params[$attr] = '';
+                $data->params->$attr = '';
             endforeach;
-
-            file_put_contents($file['path'], json_encode($data));
 
             // Create the project detail file.
             mkdir('data/projects/' . $params['slug'], 0777);
-            file_put_contents('data/projects/' . $params['slug'] . '/project.json', json_encode($params));
+            file_put_contents('data/projects/' . $slug . '/project.json', json_encode($data->params));
             break;
 
         default:

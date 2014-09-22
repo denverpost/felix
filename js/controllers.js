@@ -1,10 +1,5 @@
 var felixControllers = angular.module('felixControllers', ['felixServices']);
 
-felixControllers.controller('formCtrl', ['$scope', '$filter',
-    function($scope, $filter)
-    {
-    }]);
-
 felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
     function($scope, $http)
     {
