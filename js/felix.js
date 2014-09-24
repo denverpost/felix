@@ -60,6 +60,7 @@ app.run(['$location', '$rootScope',
                 {
                     $rootScope.title = current.$$route.title;
                     $rootScope.object = current.$$route.object;
+                    $rootScope.subobject = current.$$route.subobject;
                 }
             });
     }]);
