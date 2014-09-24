@@ -24,13 +24,19 @@
     <script src="js/felix.js"></script>
     <style type="text/css" media="screen">
 .hidden { display:none; }
+section.subnav
+{
+    width: 15%;
+    height: 100%;
+    float: left;
+}
     </style>
 </head>
 <body>
     <header>
         <h1><a href="#/">Felix</a></h1>
     </header>
-    <section ng-class="project-nav" ng-include src="'partials/' + object + '-nav.html'"></section>
+    <section class="subnav" ng-class="project-nav" ng-include src="'partials/' + object + '-nav.html'"></section>
     <section ng-view></section>
     <section>
     </section>

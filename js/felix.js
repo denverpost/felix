@@ -14,14 +14,14 @@ app.config(['$routeProvider',
             {
                 templateUrl: 'partials/project-index.html',
                 controller: 'ProjectIndexCtrl',
-                object: 'project',
+                object: '',
                 title: 'Project Control'
             }).
             when('/projects/create',
             {
                 templateUrl: 'partials/project-create.html',
                 controller: 'ProjectCreateCtrl',
-                object: 'project',
+                object: '',
                 title: 'Create a project'
             }).
             when('/projects/:slug/edit',
@@ -35,7 +35,7 @@ app.config(['$routeProvider',
             {
                 templateUrl: 'partials/project-delete.html',
                 controller: 'ProjectDeleteCtrl',
-                object: 'project',
+                object: '',
                 title: 'Delete project'
             }).
             when('/projects/:slug/css',
