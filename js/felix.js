@@ -10,35 +10,35 @@ app.config(['$routeProvider',
     function ($routeProvider)
     {
         $routeProvider.
-            when('/projects',
+            when('/project',
             {
                 templateUrl: 'partials/project-index.html',
                 controller: 'ProjectIndexCtrl',
                 object: '',
                 title: 'Project Control'
             }).
-            when('/projects/create',
+            when('/project/create',
             {
                 templateUrl: 'partials/project-create.html',
                 controller: 'ProjectCreateCtrl',
                 object: '',
                 title: 'Create a project'
             }).
-            when('/projects/:slug/edit',
+            when('/project/:slug/edit',
             {
                 templateUrl: 'partials/project-edit.html',
                 controller: 'ProjectEditCtrl',
                 object: 'project',
                 title: 'Edit project'
             }).
-            when('/projects/:slug/delete',
+            when('/project/:slug/delete',
             {
                 templateUrl: 'partials/project-delete.html',
                 controller: 'ProjectDeleteCtrl',
                 object: '',
                 title: 'Delete project'
             }).
-            when('/projects/:slug/css',
+            when('/project/:slug/css',
             {
                 templateUrl: 'partials/css.html',
                 controller: 'CssCtrl',

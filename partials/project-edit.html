@@ -4,13 +4,14 @@
 <div class="row">
         <div class="large-6 columns">
             <div class="row">
-                <form name="metaForm" novalidate class="simple-form" ng-repeat="meta in edit_meta.meta">
+                <form name="metaForm" novalidate class="simple-form">
+                    <div ng-repeat="meta in edit_meta.meta">
                     <div class="large-12 columns">
                         <label for="{{meta.name}}">{{meta.name}}
                             <input type="text" name="{{meta.name}}" value="{{meta.data}}" />
                         </label>
                     </div>
-                </form>
+                    </div>
             </div>
         </div> 
         <div class="large-6 columns">
