@@ -1,13 +1,27 @@
 var felixControllers = angular.module('felixControllers', ['felixServices', 'ngRoute']);
 
+// Global, or global-ish variables
+// Are globals a bad idea in Angular? We'll find out here.
+function Global($scope, $http, $route, $routeParams) 
+{ 
+    $http.get('data/project/list.json').success(function(data)
+    {
+        // If there's a slug for a project, it will be in the $route object here:
+        if ( typeof $route.current.params.slug !== 'undefined' ) 
+        {
+            $scope.project = data[$route.current.params.slug];
+            $scope.slug = $route.current.params.slug;
+        }
+
+        // Populate project list in case we need it.
+        $scope.projects = data;
+    });
+}
+
+
 felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
     function($scope, $http)
-    {
-        $http.get('data/project/list.json').success(function(data)
-        {
-            $scope.projects = data;
-        });
-    }]);
+    { }]);
 
 felixControllers.controller('ProjectEditCtrl', ['$scope', '$routeParams', 'projectFactory',
     function($scope, $routeParams, projectFactory)
