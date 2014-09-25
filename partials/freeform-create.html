@@ -1,12 +1,18 @@
 <form name="create" role="form">
 
     <p>
-    <label for="name">Project Name:</label>
+    <label for="name">Freeform Name:</label>
     <input type="text" name="name" ng-model="name" class="" required />
     </p>
 
+    <p>
+    <label for="markup">Markup:</label>
+    <textarea name="markup" ng-model="markup" class="" required></textarea>
+    </p>
+
     <div class="hidden">
-    <input type="text" name="object" ng-model="object" ng-init="object='project'" />
+    <input type="text" name="project" ng-model="project" ng-init="project='{{slug}}'" />
+    <input type="text" name="object" ng-model="object" ng-init="object='freeform'" />
     <input type="text" name="action" ng-model="action" ng-init="action='create'" />
     </div>
     <button ng-disabled="progress.active()" ng-click="submit(create)">Submit</button>
