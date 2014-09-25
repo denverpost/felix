@@ -1,0 +1,14 @@
+<form name="create" role="form">
+
+    <p>
+    <label for="name">Project Name:</label>
+    <input type="text" name="name" ng-model="name" class="" required />
+    </p>
+
+    <div class="hidden">
+    <input type="text" name="object" ng-model="object" ng-init="object='project'" />
+    <input type="text" name="action" ng-model="action" ng-init="action='create'" />
+    </div>
+    <button ng-disabled="progress.active()" ng-click="submit(create)">Submit</button>
+
+</form>

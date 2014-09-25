@@ -45,6 +45,14 @@ app.config(['$routeProvider',
                 object: '',
                 title: 'Delete project'
             }).
+            when('/project/:slug/freeform/create',
+            {
+                templateUrl: 'partials/freeform-create.html',
+                controller: 'FreeformCtrl',
+                object: 'project',
+                subobject: 'freeform',
+                title: 'Edit CSS'
+            }).
             when('/project/:slug/css',
             {
                 templateUrl: 'partials/css.html',
