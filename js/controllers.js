@@ -23,6 +23,10 @@ felixControllers.controller('ProjectIndexCtrl', ['$scope', '$http',
     function($scope, $http)
     { }]);
 
+felixControllers.controller('ProjectDetailCtrl', ['$scope', '$http',
+    function($scope, $http)
+    { }]);
+
 felixControllers.controller('ProjectEditCtrl', ['$scope', '$routeParams', 'projectFactory',
     function($scope, $routeParams, projectFactory)
     {

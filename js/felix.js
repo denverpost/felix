@@ -24,6 +24,13 @@ app.config(['$routeProvider',
                 object: '',
                 title: 'Create a project'
             }).
+            when('/project/:slug',
+            {
+                templateUrl: 'partials/project-detail.html',
+                controller: 'ProjectDetailCtrl',
+                object: 'project',
+                title: 'Project Detail'
+            }).
             when('/project/:slug/edit',
             {
                 templateUrl: 'partials/project-edit.html',
@@ -46,7 +53,7 @@ app.config(['$routeProvider',
                 title: 'Edit CSS'
             }).
             otherwise({
-                redirectTo: '/projects'
+                redirectTo: '/project'
             });
     }]);
 
