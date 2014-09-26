@@ -74,7 +74,7 @@ function form_handler($scope, $http, $window, form, fields, redirect)
         });
 }
 
-felixControllers.controller('FreeformCtrl', ['$scope', '$http', '$window'
+felixControllers.controller('FreeformCtrl', ['$scope', '$http', '$window',
     function($scope, $http, $window)
     { 
         // *** Need to write back-end handlers for FF's
