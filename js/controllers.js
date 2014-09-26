@@ -34,7 +34,7 @@ felixControllers.controller('ProjectEditCtrl', ['$scope', '$routeParams', 'proje
         $scope.edit_meta = angular.fromJson(projectFactory.query({slug: $routeParams.slug}));
 }]);
 
-function form_handler($scope, $http, $window, form, fields, redirect)
+function form_handler($scope, $http, $location, form, fields, redirect)
 { 
     // This handles our forms. Create, update, delete.
     console.log($scope, form); 
@@ -70,7 +70,7 @@ function form_handler($scope, $http, $window, form, fields, redirect)
         .error(function(data, status, headers, submission)
         {
             console.log(data, status, headers);
-            $window.location.href = '#/' + redirect;
+            $location.url('/' + redirect);
         });
 }
 
@@ -78,38 +78,38 @@ felixControllers.controller('ArticleCtrl', ['$scope', '$http',
     function($scope, $http)
     { }]);
 
-felixControllers.controller('FreeformCtrl', ['$scope', '$http', '$window',
-    function($scope, $http, $window)
+felixControllers.controller('FreeformCtrl', ['$scope', '$http', '$location',
+    function($scope, $http, $location)
     { 
         // *** Need to write back-end handlers for FF's
         $scope.submit = function(form)
         {
             var fields = ['name', 'markup'];
             var redirect = '';
-            form_handler($scope, $http, $window, form, fields, redirect);
+            form_handler($scope, $http, $location, form, fields, redirect);
         }
     }]);
 
-felixControllers.controller('ProjectDeleteCtrl', ['$scope', '$routeParams', '$http', '$window',
-    function($scope, $routeParams, $http, $window)
+felixControllers.controller('ProjectDeleteCtrl', ['$scope', '$routeParams', '$http', '$location',
+    function($scope, $routeParams, $http, $location)
     {
         $scope.slug = $routeParams.slug;
         $scope.submit = function(form)
         {
             var fields = ['slug'];
             var redirect = '';
-            form_handler($scope, $http, $window, form, fields, redirect);
+            form_handler($scope, $http, $location, form, fields, redirect);
         }
     }]);
 
-felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http', '$window',
-    function($scope, $http, $window)
+felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http', '$location',
+    function($scope, $http, $location)
     {
         $scope.submit = function(form)
         {
             var fields = ['name'];
             var redirect = '';
-            form_handler($scope, $http, $window, form, fields, redirect);
+            form_handler($scope, $http, $location, form, fields, redirect);
         }
     }]);
 
