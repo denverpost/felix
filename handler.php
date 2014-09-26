@@ -88,7 +88,6 @@ function create_object($object, $params)
     switch ( $object ):
         case 'project':
             // UPDATE: project list
-            // Update the project list.
             $file = array(
                 'name' => 'list',
                 'dir' => 'data/' . $object . '/',
@@ -99,6 +98,7 @@ function create_object($object, $params)
             $slug = slugify($params['name']);
             $data->$slug = $params['name'];
             file_put_contents($file['path'], json_encode($data));
+
 
             // CREATE: project
             // Create empty fields for the other attributes we'll need.
