@@ -74,6 +74,10 @@ function form_handler($scope, $http, $window, form, fields, redirect)
         });
 }
 
+felixControllers.controller('ArticleCtrl', ['$scope', '$http',
+    function($scope, $http)
+    { }]);
+
 felixControllers.controller('FreeformCtrl', ['$scope', '$http', '$window',
     function($scope, $http, $window)
     { 

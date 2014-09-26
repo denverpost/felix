@@ -1,0 +1,14 @@
+<form name="edit" role="form">
+
+    <p>
+    <label for="article">Article Text:</label>
+    <textarea name="article" data-ng-model="article" class="" required></textarea>
+    </p>
+
+    <div class="hidden">
+    <input type="text" name="object" ng-model="object" ng-init="object='article'" />
+    <input type="text" name="action" ng-model="action" ng-init="action='edit'" />
+    </div>
+    <button ng-disabled="progress.active()" ng-click="submit(edit)">Submit</button>
+
+</form>
