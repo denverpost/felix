@@ -21,7 +21,6 @@ A mini-CMS for unique story/project presentations with strong multimedia compone
 * [ ] Assign media column width to insert objects
 
 ## Article
-* [X] Insert text for article
 * [X] Update text for article
 * [ ] Create and edit article meta information
 * [ ] Create / edit title, subtitle object
