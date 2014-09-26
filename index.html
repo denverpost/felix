@@ -24,16 +24,6 @@
     <script src="js/felix.js"></script>
     <style type="text/css" media="screen">
 .hidden { display:none; }
-section.nav
-{
-    width: 15%;
-    height: 100%;
-    float: left;
-}
-section.view
-{
-    width: 80%;
-}
     </style>
 </head>
 <body ng-controller="Global">
@@ -41,12 +31,11 @@ section.view
         <h1><a href="#/">Felix</a></h1>
     </header>
     <div class="row">
-        <div class="one columns" ng-class="project-nav" ng-include src="'partials/' + object + '-nav.html'">
+        <div class="large-2 columns" ng-class="project-nav" ng-include src="'partials/' + object + '-nav.html'">
             <section class="subnav" ng-class="project-subnav" ng-include src="'partials/' + subobject + '-nav.html'"></section>
         </div>
-        <div class="ten columns" ng-view></div>
+        <div class="large-10 columns" ng-view></div>
     </div>
-    <footer>
-    </footer>
+    <footer></footer>
 </body>
 </html>
