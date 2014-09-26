@@ -34,7 +34,7 @@ felixControllers.controller('ProjectEditCtrl', ['$scope', '$routeParams', 'proje
         $scope.edit_meta = angular.fromJson(projectFactory.query({slug: $routeParams.slug}));
 }]);
 
-function form_handler($scope, $http, form, fields, $window, redirect)
+function form_handler($scope, $http, $window, form, fields, redirect)
 { 
     // This handles our forms. Create, update, delete.
     console.log($scope, form); 
@@ -70,7 +70,7 @@ function form_handler($scope, $http, form, fields, $window, redirect)
         .error(function(data, status, headers, submission)
         {
             console.log(data, status, headers);
-            $window.location.href = '#/';
+            $window.location.href = '#/' + redirect;
         });
 }
 
@@ -79,7 +79,9 @@ felixControllers.controller('FreeformCtrl', ['$scope', '$http',
     { 
         $scope.submit = function(form)
         {
-            form_handler($scope, $http, form, ['name', 'markup'], $window, '#/');
+            var fields = ['name', 'markup'];
+            var redirect = '';
+            form_handler($scope, $http, $window, form, fields, redirect);
         }
     }]);
 
@@ -89,7 +91,9 @@ felixControllers.controller('ProjectDeleteCtrl', ['$scope', '$routeParams', '$ht
         $scope.slug = $routeParams.slug;
         $scope.submit = function(form)
         {
-            form_handler($scope, $http, form, ['slug'], $window, '#/');
+            var fields = ['slug'];
+            var redirect = '';
+            form_handler($scope, $http, $window, form, fields, redirect);
         }
     }]);
 
@@ -98,40 +102,9 @@ felixControllers.controller('ProjectCreateCtrl', ['$scope', '$http', '$window',
     {
         $scope.submit = function(form)
         {
-            $scope.submitted = true;
-
-            if ( form.$invalid ) return;
-            console.log($scope);
-
-            var submission = {
-                params: {
-                    'object': $scope.object,
-                    'action': $scope.action,
-                    'name': $scope.name
-                }
-            }
-
-            // It's valid, so let's send the data to our backend form handler
-            // and write it to a file.
-
-            // ^^^ NOTE: Domain of handler is hard-coded, needs to not be.
-            $http.jsonp('http://localhost/felix/handler.php', submission)
-                .success(function(data, status, headers, submission)
-                {
-                    if ( data.status == 'OK' )
-                    {
-                    }
-                    else
-                    {
-                        // error handlers
-                    }
-                })
-                .error(function(data, status, headers, submission)
-                {
-                    $window.location.href = '#/';
-                    console.log(data, status, headers);
-
-                });
+            var fields = ['name'];
+            var redirect = '';
+            form_handler($scope, $http, $window, form, fields, redirect);
         }
     }]);
 
