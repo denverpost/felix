@@ -30,18 +30,22 @@ section.nav
     height: 100%;
     float: left;
 }
+section.view
+{
+    width: 80%;
+}
     </style>
 </head>
 <body ng-controller="Global">
     <header>
         <h1><a href="#/">Felix</a></h1>
     </header>
-    <section class="nav" ng-class="project-nav" ng-include src="'partials/' + object + '-nav.html'">
-        <section class="subnav" ng-class="project-subnav" ng-include src="'partials/' + subobject + '-nav.html'"></section>
-    </section>
-    <section ng-view></section>
-    <section>
-    </section>
+    <div class="row">
+        <div class="one columns" ng-class="project-nav" ng-include src="'partials/' + object + '-nav.html'">
+            <section class="subnav" ng-class="project-subnav" ng-include src="'partials/' + subobject + '-nav.html'"></section>
+        </div>
+        <div class="ten columns" ng-view></div>
+    </div>
     <footer>
     </footer>
 </body>
