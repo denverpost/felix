@@ -81,13 +81,29 @@ function delete_object($object, $params)
     endswitch;
 }
 function edit_object($object, $params)
-{}
+{
+    switch ( $object ):
+        case 'article':
+            $file = array(
+                'name' => 'project',
+                'dir' => 'data/project/' . $params['slug'] . '/',
+                'ext' => '.json');
+            $file['path'] = $file['dir'] . $file['name'] . $file['ext'];
+            $data = json_decode(file_get_contents($file['path']));
+            if ( $data === FALSE ) die("JSON from " . $file['name'] . " could not be decoded");
+//        var_dump($data); die;
+            $data->article->content = $params['content'];
+var_dump($params);
+            file_put_contents($file['path'], json_encode($data));
+            break;
+    endswitch;
+}
 
 function create_object($object, $params)
 {
     switch ( $object ):
         case 'project':
-            // UPDATE: project list
+            // EDIT: project list
             $file = array(
                 'name' => 'list',
                 'dir' => 'data/' . $object . '/',

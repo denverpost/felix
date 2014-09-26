@@ -74,9 +74,17 @@ function form_handler($scope, $http, $location, form, fields, redirect)
         });
 }
 
-felixControllers.controller('ArticleCtrl', ['$scope', '$http',
-    function($scope, $http)
-    { }]);
+felixControllers.controller('ArticleCtrl', ['$scope', '$http', '$location', '$routeParams',
+    function($scope, $http, $location, $routeParams)
+    {
+        $scope.slug = $routeParams.slug;
+        $scope.submit = function(form)
+        {
+            var fields = ['slug', 'content'];
+            var redirect = 'project/' + $scope.slug;
+            form_handler($scope, $http, $location, form, fields, redirect);
+        }
+    }]);
 
 felixControllers.controller('FreeformCtrl', ['$scope', '$http', '$location',
     function($scope, $http, $location)
