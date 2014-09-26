@@ -5,12 +5,15 @@
         <div class="large-6 columns">
             <div class="row">
                 <form name="metaForm" novalidate class="simple-form">
-                    <div ng-repeat="(key, value) in edit_meta.meta">
-                    <div class="large-12 columns">
-                        <label for="{{key}}">{{key}}
-                            <input type="text" name="{{key}}" value="{{value}}" />
-                        </label>
-                    </div>
+                    <div class="large-12 columns" ng-repeat="(key, value) in edit_meta.meta">
+                        <div class="row collapse prefix-radius">
+                            <div class="small-3 columns">
+                                <label class="prefix" for="{{key}}">{{key}}</label>
+                            </div>
+                            <div class="small-9 columns">
+                                <input type="text" name="{{key}}" value="{{value}}" />
+                            </div>
+                        </div>
                     </div>
             </div>
         </div> 
