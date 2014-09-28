@@ -12,6 +12,12 @@ function Global($scope, $http, $route, $routeParams)
         {
             $scope.project = data[$route.current.params.slug];
             $scope.slug = $route.current.params.slug;
+
+            // Get the project's json
+            $http.get('data/project/' + $scope.slug + '/project.json').success(function(data)
+            {
+                $scope.article = data.article;
+            });
         }
 
         // Populate project list in case we need it.
@@ -86,14 +92,15 @@ felixControllers.controller('ArticleCtrl', ['$scope', '$http', '$location', '$ro
         }
     }]);
 
-felixControllers.controller('FreeformCtrl', ['$scope', '$http', '$location',
+felixControllers.controller('FreeformCtrl', ['$scope', '$http', '$location', '$routeParams',
     function($scope, $http, $location)
     { 
         // *** Need to write back-end handlers for FF's
+        $scope.slug = $routeParams.slug;
         $scope.submit = function(form)
         {
-            var fields = ['name', 'markup'];
-            var redirect = '';
+            var fields = ['slug', 'freeform'];
+            var redirect = 'project/' + $scope.slug;
             form_handler($scope, $http, $location, form, fields, redirect);
         }
     }]);

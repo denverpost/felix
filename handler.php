@@ -91,9 +91,7 @@ function edit_object($object, $params)
             $file['path'] = $file['dir'] . $file['name'] . $file['ext'];
             $data = json_decode(file_get_contents($file['path']));
             if ( $data === FALSE ) die("JSON from " . $file['name'] . " could not be decoded");
-//        var_dump($data); die;
             $data->article->content = $params['content'];
-var_dump($params);
             file_put_contents($file['path'], json_encode($data));
             break;
     endswitch;
@@ -102,6 +100,29 @@ var_dump($params);
 function create_object($object, $params)
 {
     switch ( $object ):
+        case 'freeform':
+            // EDIT: freeform list
+            $file = array(
+                'name' => 'freeform',
+                'dir' => 'data/project/' . $params['slug'] . '/',
+                'ext' => '.json');
+            $file['path'] = $file['dir'] . $file['name'] . $file['ext'];
+            $data = json_decode(file_get_contents($file['path']));
+            if ( $data === FALSE ) die("JSON from " . $file['name'] . " could not be decoded");
+echo count($data);
+            $id = count($data);
+            $item = array(
+                'id' => $id,
+                'name' => $params['name'],
+                'content' => $params['content']
+            );
+            if ( $id == 0 ) $data = $item;
+            //else $data[] = $item;
+            var_dump($data);
+            file_put_contents($file['path'], json_encode($data));
+            break;
+            
+
         case 'project':
             // EDIT: project list
             $file = array(
@@ -115,7 +136,6 @@ function create_object($object, $params)
             $data->$slug = $params['name'];
             file_put_contents($file['path'], json_encode($data));
 
-
             // CREATE: project
             // Create empty fields for the other attributes we'll need.
             $model = json_decode(file_get_contents('data/models/' . $object . '.json'));
@@ -124,6 +144,10 @@ function create_object($object, $params)
             // Create the project detail file.
             mkdir('data/project/' . $slug, 0777);
             file_put_contents('data/project/' . $slug . '/project.json', json_encode($data->params));
+
+            // CREATE: (empty) freeform list
+            $data = file_get_contents('data/models/freeform.json');
+            file_put_contents('data/project/' . $slug . '/freeform.json', $data);
             break;
 
         default:

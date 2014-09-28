@@ -2,16 +2,15 @@
 
     <p>
     <label for="name">Freeform Name:</label>
-    <input type="text" name="name" ng-model="name" class="" required />
+    <input type="text" name="name" ng-model="freeform.name" class="" required />
     </p>
 
     <p>
-    <label for="markup">Markup:</label>
-    <textarea name="markup" ng-model="markup" class="" required></textarea>
+    <label for="content">Content:</label>
+    <textarea name="content" ng-model="freeform.content" class="" required></textarea>
     </p>
 
     <div class="hidden">
-    <input type="text" name="project" ng-model="project" ng-init="project='{{slug}}'" />
     <input type="text" name="object" ng-model="object" ng-init="object='freeform'" />
     <input type="text" name="action" ng-model="action" ng-init="action='create'" />
     </div>
